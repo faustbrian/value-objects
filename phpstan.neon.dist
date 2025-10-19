@@ -1,0 +1,31 @@
+parameters:
+    level: max
+    paths:
+        - src
+
+    reportUnmatchedIgnoredErrors: true
+
+    ignoreErrors:
+        # LocationData handles Google Maps API responses which don't have strict typing
+        # The structure is guaranteed by Google but can't be expressed in PHP types
+        - message: '#foreach\.nonIterable|offsetAccess\.nonOffsetAccessible|Cannot access offset|Cannot cast mixed|missingType\.iterableValue|argument\.type|return\.type|argument\.missing|argument\.unknown|staticMethod\.notFound#'
+          paths:
+            - src/LocationData.php
+            - src/GeographicCoordinate.php
+
+        # Casts have missing generic types from Spatie LaravelData - framework limitation
+        - message: '#missingType\.generics#'
+          paths:
+            - src/Casts/
+
+        # PostalCode casts access properties from external enum that PHPStan can't verify
+        - message: '#property\.nonObject|nullsafe\.neverNull#'
+          paths:
+            - src/Casts/PostalCodeCast.php
+            - src/Casts/PostalCodeStringCast.php
+
+        # Currency constructor gets int values from Brick\Money\Currencies methods that have range types
+        # PHPStan can't verify the values meet the range constraints without explicit type checks
+        - message: '#argument\.type.*int<#'
+          paths:
+            - src/Currency.php
