@@ -1,0 +1,25 @@
+<?php declare(strict_types=1);
+
+/**
+ * Copyright (C) Brian Faust
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Cline\ValueObjects\Exceptions\Internationalization;
+
+use InvalidArgumentException;
+
+use function sprintf;
+
+/**
+ * @author Brian Faust <brian@cline.sh>
+ */
+final class InvalidPostalCodeException extends InvalidArgumentException
+{
+    public static function create(string $code, string $country): self
+    {
+        return new self(sprintf("Invalid postal code '%s' for country '%s'", $code, $country));
+    }
+}
