@@ -29,9 +29,8 @@ use const PHP_FLOAT_EPSILON;
 use function array_merge;
 
 /**
- * @internal
- *
  * @author Brian Faust <brian@cline.sh>
+ * @internal
  */
 #[CoversClass(LocationData::class)]
 #[Small()]
@@ -90,17 +89,17 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertInstanceOf(LocationData::class, $locationData);
-        self::assertEqualsWithDelta(59.329_3, $locationData->getCoordinate()->getLatitude()->toValue(), PHP_FLOAT_EPSILON);
-        self::assertEqualsWithDelta(18.068_6, $locationData->getCoordinate()->getLongitude()->toValue(), PHP_FLOAT_EPSILON);
-        self::assertSame('ROOFTOP', $locationData->getCoordinate()->getLocationType());
-        self::assertSame('ChIJywtkGTF2X0YRZnedZ9MnDag', $locationData->getCoordinate()->getPlaceId());
-        self::assertSame(CountryCode::SE, $locationData->getCountryCode());
-        self::assertSame('111 22', $locationData->getPostalCode()->toString());
-        self::assertSame('Stockholm', $locationData->getLocality());
-        self::assertSame('Drottninggatan 1', $locationData->getStreetAddress());
-        self::assertSame('Drottninggatan 1, 111 22 Stockholm, Sweden', $locationData->getFormattedAddress());
-        self::assertCount(2, $locationData->getAdministrativeLevels());
+        $this->assertInstanceOf(LocationData::class, $locationData);
+        $this->assertEqualsWithDelta(59.329_3, $locationData->getCoordinate()->getLatitude()->toValue(), PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(18.068_6, $locationData->getCoordinate()->getLongitude()->toValue(), PHP_FLOAT_EPSILON);
+        $this->assertSame('ROOFTOP', $locationData->getCoordinate()->getLocationType());
+        $this->assertSame('ChIJywtkGTF2X0YRZnedZ9MnDag', $locationData->getCoordinate()->getPlaceId());
+        $this->assertSame(CountryCode::SE, $locationData->getCountryCode());
+        $this->assertSame('111 22', $locationData->getPostalCode()->toString());
+        $this->assertSame('Stockholm', $locationData->getLocality());
+        $this->assertSame('Drottninggatan 1', $locationData->getStreetAddress());
+        $this->assertSame('Drottninggatan 1, 111 22 Stockholm, Sweden', $locationData->getFormattedAddress());
+        $this->assertCount(2, $locationData->getAdministrativeLevels());
     }
 
     #[Test()]
@@ -132,17 +131,17 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertInstanceOf(LocationData::class, $locationData);
-        self::assertEqualsWithDelta(40.712_8, $locationData->getCoordinate()->getLatitude()->toValue(), PHP_FLOAT_EPSILON);
-        self::assertSame(-74.006_0, $locationData->getCoordinate()->getLongitude()->toValue());
-        self::assertNull($locationData->getCoordinate()->getLocationType());
-        self::assertNull($locationData->getCoordinate()->getPlaceId());
-        self::assertSame(CountryCode::US, $locationData->getCountryCode());
-        self::assertSame('', $locationData->getPostalCode()->toString());
-        self::assertSame('New York', $locationData->getLocality());
-        self::assertNull($locationData->getStreetAddress());
-        self::assertNull($locationData->getFormattedAddress());
-        self::assertEmpty($locationData->getAdministrativeLevels());
+        $this->assertInstanceOf(LocationData::class, $locationData);
+        $this->assertEqualsWithDelta(40.712_8, $locationData->getCoordinate()->getLatitude()->toValue(), PHP_FLOAT_EPSILON);
+        $this->assertSame(-74.006_0, $locationData->getCoordinate()->getLongitude()->toValue());
+        $this->assertNull($locationData->getCoordinate()->getLocationType());
+        $this->assertNull($locationData->getCoordinate()->getPlaceId());
+        $this->assertSame(CountryCode::US, $locationData->getCountryCode());
+        $this->assertSame('', $locationData->getPostalCode()->toString());
+        $this->assertSame('New York', $locationData->getLocality());
+        $this->assertNull($locationData->getStreetAddress());
+        $this->assertNull($locationData->getFormattedAddress());
+        $this->assertEmpty($locationData->getAdministrativeLevels());
     }
 
     #[Test()]
@@ -179,14 +178,14 @@ final class LocationDataTest extends TestCase
         );
 
         // Assert
-        self::assertInstanceOf(LocationData::class, $locationData);
-        self::assertSame($coordinate, $locationData->getCoordinate());
-        self::assertSame($countryCode, $locationData->getCountryCode());
-        self::assertSame($postalCode, $locationData->getPostalCode());
-        self::assertSame($locality, $locationData->getLocality());
-        self::assertSame($streetAddress, $locationData->getStreetAddress());
-        self::assertSame($administrativeLevels, $locationData->getAdministrativeLevels());
-        self::assertSame($formattedAddress, $locationData->getFormattedAddress());
+        $this->assertInstanceOf(LocationData::class, $locationData);
+        $this->assertSame($coordinate, $locationData->getCoordinate());
+        $this->assertSame($countryCode, $locationData->getCountryCode());
+        $this->assertSame($postalCode, $locationData->getPostalCode());
+        $this->assertSame($locality, $locationData->getLocality());
+        $this->assertSame($streetAddress, $locationData->getStreetAddress());
+        $this->assertSame($administrativeLevels, $locationData->getAdministrativeLevels());
+        $this->assertSame($formattedAddress, $locationData->getFormattedAddress());
     }
 
     #[Test()]
@@ -215,14 +214,14 @@ final class LocationDataTest extends TestCase
         );
 
         // Assert
-        self::assertInstanceOf(LocationData::class, $locationData);
-        self::assertSame($coordinate, $locationData->getCoordinate());
-        self::assertSame($countryCode, $locationData->getCountryCode());
-        self::assertSame($postalCode, $locationData->getPostalCode());
-        self::assertSame($locality, $locationData->getLocality());
-        self::assertNull($locationData->getStreetAddress());
-        self::assertNull($locationData->getAdministrativeLevels());
-        self::assertNull($locationData->getFormattedAddress());
+        $this->assertInstanceOf(LocationData::class, $locationData);
+        $this->assertSame($coordinate, $locationData->getCoordinate());
+        $this->assertSame($countryCode, $locationData->getCountryCode());
+        $this->assertSame($postalCode, $locationData->getPostalCode());
+        $this->assertSame($locality, $locationData->getLocality());
+        $this->assertNull($locationData->getStreetAddress());
+        $this->assertNull($locationData->getAdministrativeLevels());
+        $this->assertNull($locationData->getFormattedAddress());
     }
 
     #[Test()]
@@ -310,8 +309,8 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertSame('', $locationData->getPostalCode()->toString());
-        self::assertSame(CountryCode::KE, $locationData->getPostalCode()->getCountryCode());
+        $this->assertSame('', $locationData->getPostalCode()->toString());
+        $this->assertSame(CountryCode::KE, $locationData->getPostalCode()->getCountryCode());
     }
 
     #[Test()]
@@ -340,7 +339,7 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertSame('London', $locationData->getLocality());
+        $this->assertSame('London', $locationData->getLocality());
     }
 
     #[Test()]
@@ -369,7 +368,7 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertSame('Shibuya', $locationData->getLocality());
+        $this->assertSame('Shibuya', $locationData->getLocality());
     }
 
     #[Test()]
@@ -398,7 +397,7 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertSame('California', $locationData->getLocality());
+        $this->assertSame('California', $locationData->getLocality());
     }
 
     #[Test()]
@@ -427,7 +426,7 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertEquals('10001', $locationData->getLocality());
+        $this->assertEquals('10001', $locationData->getLocality());
     }
 
     #[Test()]
@@ -456,7 +455,7 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertSame('Berlin', $locationData->getLocality());
+        $this->assertSame('Berlin', $locationData->getLocality());
     }
 
     #[Test()]
@@ -506,12 +505,12 @@ final class LocationDataTest extends TestCase
 
         // Assert
         $administrativeLevels = $locationData->getAdministrativeLevels();
-        self::assertCount(5, $administrativeLevels);
-        self::assertSame('California', $administrativeLevels['administrative_area_level_1']);
-        self::assertSame('Los Angeles County', $administrativeLevels['administrative_area_level_2']);
-        self::assertSame('Los Angeles', $administrativeLevels['administrative_area_level_3']);
-        self::assertSame('District 4', $administrativeLevels['administrative_area_level_4']);
-        self::assertSame('Subdistrict 5', $administrativeLevels['administrative_area_level_5']);
+        $this->assertCount(5, $administrativeLevels);
+        $this->assertSame('California', $administrativeLevels['administrative_area_level_1']);
+        $this->assertSame('Los Angeles County', $administrativeLevels['administrative_area_level_2']);
+        $this->assertSame('Los Angeles', $administrativeLevels['administrative_area_level_3']);
+        $this->assertSame('District 4', $administrativeLevels['administrative_area_level_4']);
+        $this->assertSame('Subdistrict 5', $administrativeLevels['administrative_area_level_5']);
     }
 
     #[Test()]
@@ -540,9 +539,9 @@ final class LocationDataTest extends TestCase
         );
 
         // Assert
-        self::assertNull($locationData->getStreetAddress());
-        self::assertNull($locationData->getAdministrativeLevels());
-        self::assertNull($locationData->getFormattedAddress());
+        $this->assertNull($locationData->getStreetAddress());
+        $this->assertNull($locationData->getAdministrativeLevels());
+        $this->assertNull($locationData->getFormattedAddress());
     }
 
     #[Test()]
@@ -566,7 +565,7 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertSame(CountryCode::FR, $locationData->getCountryCode());
+        $this->assertSame(CountryCode::FR, $locationData->getCountryCode());
     }
 
     #[Test()]
@@ -595,7 +594,7 @@ final class LocationDataTest extends TestCase
         $locationData = LocationData::createFromGoogleMapsResult($googleMapsResult);
 
         // Assert
-        self::assertSame($expected, $locationData->getLocality());
+        $this->assertSame($expected, $locationData->getLocality());
     }
 
     public static function provideExtracts_locality_using_correct_fallback_strategyCases(): iterable

@@ -15,9 +15,8 @@ use Spatie\LaravelData\Data;
 /**
  * Test data object for testing casts.
  *
- * @internal
- *
  * @author Brian Faust <brian@cline.sh>
+ * @internal
  */
 final class TestDataObject extends Data
 {

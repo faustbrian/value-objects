@@ -14,9 +14,8 @@ use Cline\ValueObjects\AbstractValueObject;
 /**
  * Concrete implementation of AbstractValueObject for testing.
  *
- * @internal
- *
  * @author Brian Faust <brian@cline.sh>
+ * @internal
  */
 final class TestValueObject extends AbstractValueObject
 {

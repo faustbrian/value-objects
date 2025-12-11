@@ -20,12 +20,11 @@ use Cline\Intl\Enum\CountryCode;
  * exception is the phoneNumber field, added due to its frequent association
  * with addresses for shipping purposes.
  *
- * @see https://en.wikipedia.org/wiki/VCard
- * @see http://www.oasis-open.org/committees/ciq/download.shtml
- *
  * @author Brian Faust <brian@cline.sh>
  *
  * @version 1.0.1
+ * @see https://en.wikipedia.org/wiki/VCard
+ * @see http://www.oasis-open.org/committees/ciq/download.shtml
  *
  * @psalm-immutable
  */

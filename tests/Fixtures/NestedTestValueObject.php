@@ -14,9 +14,8 @@ use Cline\ValueObjects\AbstractValueObject;
 /**
  * Concrete implementation of AbstractValueObject with nested value objects for testing.
  *
- * @internal
- *
  * @author Brian Faust <brian@cline.sh>
+ * @internal
  */
 final class NestedTestValueObject extends AbstractValueObject
 {

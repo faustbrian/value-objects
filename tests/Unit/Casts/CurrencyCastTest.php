@@ -21,9 +21,8 @@ use Tests\Fixtures\TestDataObject;
 /**
  * Tests for CurrencyCast.
  *
- * @internal
- *
  * @author Brian Faust <brian@cline.sh>
+ * @internal
  *
  * @covers \Cline\ValueObjects\Casts\CurrencyCast
  *

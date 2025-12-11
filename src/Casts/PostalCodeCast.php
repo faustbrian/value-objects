@@ -44,10 +44,9 @@ use function is_string;
  * }
  * ```
  *
+ * @author Brian Faust <brian@cline.sh>
  * @deprecated this cast provides no logic beyond delegating to the value object factory
  *             and can be replaced with direct value object transformation in Data classes
- *
- * @author Brian Faust <brian@cline.sh>
  *
  * @psalm-immutable
  */

@@ -26,9 +26,8 @@ use function is_string;
  * for improved type safety and domain modeling. Returns Uncastable for non-string
  * values, allowing the cast to gracefully fail for invalid input types.
  *
- * @deprecated This cast provides no logic and can be removed
- *
  * @author Brian Faust <brian@cline.sh>
+ * @deprecated This cast provides no logic and can be removed
  *
  * @psalm-immutable
  */

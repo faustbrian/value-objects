@@ -30,7 +30,6 @@ use function throw_unless;
  */
 final readonly class FlagState implements Stringable
 {
-    /** @var array<int, string> Valid flag states that can be represented */
     private const array VALID_STATES = ['pending', 'active', 'inactive'];
 
     /**

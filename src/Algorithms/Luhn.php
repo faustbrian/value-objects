@@ -23,9 +23,8 @@ use function sprintf;
  * numbers such as barcodes (GTIN, EAN, UPC), credit card numbers, and other
  * numeric codes. It detects simple errors in digit sequences.
  *
- * @see https://en.wikipedia.org/wiki/Luhn_algorithm
- *
  * @author Brian Faust <brian@cline.sh>
+ * @see https://en.wikipedia.org/wiki/Luhn_algorithm
  *
  * @psalm-immutable
  */
